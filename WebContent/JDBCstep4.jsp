@@ -26,21 +26,34 @@
 	}
 	%>
 
+
+
 	<!-- Step 3 Connection Object -->
 	<%
-		try {
-		String host = "jdbc:mariadb://localhost:3306/";
+	Connection conn = null;	
+	try{
+		String host = "jdbc:mariadb://localhost:3306/won";
 		String id = "root";
-		String ps = "000";
+		String ps = "1234";
 
-		Connection conn = DriverManager.getConnection(host, id, ps);
+		conn = DriverManager.getConnection(host, id, ps);
 		out.print("연결 객체 생성 성공....<br>");
-	} catch (SQLException err) {
-		out.print("연결 객체 생성 실패....<br>" + err.getMessage());
+	}catch(SQLException err){
+		out.print("연결 객체 생성 실패....<br>"+err.getMessage());
 	}
+	
+
 	%>
+	
+	<!-- Step 4 Statement Object -->
 
+<%
+String sql="SELECT*FROM one";
+PreparedStatement pstmt = conn.prepareStatement(sql);
 
+out.print("구문 생성 성공");
+
+%>
 
 
 </body>
