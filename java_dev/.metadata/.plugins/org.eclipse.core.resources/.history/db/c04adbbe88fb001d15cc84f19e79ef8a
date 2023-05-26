@@ -1,0 +1,18 @@
+package com.spring.controller;
+
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class oneRepositoryImpl implements oneRepository {
+	
+	@Autowired
+	SqlSessionTemplate sqlSessionTemplate;
+	
+	@Override
+	public void insert(Map<String, Object>may) {
+		SqlSessionTemplate.insert("one.insert");
+	}
+}

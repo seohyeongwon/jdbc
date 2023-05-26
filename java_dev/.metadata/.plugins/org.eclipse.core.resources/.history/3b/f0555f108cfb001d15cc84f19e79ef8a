@@ -1,0 +1,9 @@
+package com.spring.controller;
+
+public class oneController {
+	
+	public String test() {
+		return "testpage";
+	}
+
+}

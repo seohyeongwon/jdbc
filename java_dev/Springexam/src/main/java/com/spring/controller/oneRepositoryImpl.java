@@ -1,0 +1,39 @@
+package com.spring.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+
+public class oneRepositoryImpl implements oneRepository {
+	
+	@Autowired
+	SqlSessionTemplate sqlSessionTemplate;
+	//약한 결합
+	//au a = new() au();
+	//강한결합
+	@Override
+	public void insert(Map<String, Object>map) {
+		System.out.println("Repository");
+		System.out.println(map.get("id"));
+		System.out.println(map.get("name"));
+		System.out.println(map.get("age"));
+		System.out.println();
+		sqlSessionTemplate.insert("one.insert",map);
+	}
+	
+	@Autowired
+	SqlSessionTemplate sqlSesstionTemplate;
+	
+	@Override
+	public void List<Map<String, Object>> select() {
+		
+		
+		return sqlSessionTemplate.selectList("one.select");
+	}
+}

@@ -1,0 +1,23 @@
+package com.spring.controller;
+
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
+import org.sprsingframework.beans.factory.annotation.Autowired;
+
+@Repository
+
+public class oneRepositoryImpl implements oneRepository {
+	
+	@Autowired
+	SqlSessionTemplate sqlSessionTemplate;
+	//약한 결합
+	//au a = new() au();
+	//강한결합
+	@Override
+	public void insert(Map<String, Object>map) {
+		sqlSessionTemplate.insert("one.insert");
+	}
+}

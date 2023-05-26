@@ -1,0 +1,13 @@
+INDEX VERSION 1.4+D:\siat_2023\java_dev\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2178487017.index
+1686169984.index
+3370692670.index
+1825613931.index
+3507507301.index
+145002494.index
+2350149793.index
+1733968425.index
+1273701351.index
+2812556336.index
+12820365.index
+1019447594.index

@@ -1,0 +1,21 @@
+package com.spring.controller;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class oneServiceImpl implements oneService {
+
+	@Autowired
+	oneRepository oneRepository;
+	
+	@Override
+	private void insert(Map<String, Object> map) {
+	
+		// TODO Auto-generated method stub
+		oneRepository.insert(map);
+	}
+	
+}
